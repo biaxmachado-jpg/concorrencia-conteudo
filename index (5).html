@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inteligência de Mercado — Seguro de Celular B2C Brasil 2026</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0f172a;--navy-mid:#1e2d4a;--blue:#2563eb;--blue-light:#3b82f6;
+      --green:#16a34a;--green-light:#dcfce7;--orange:#d97706;--orange-light:#fef3c7;
+      --red:#dc2626;--red-light:#fee2e2;--purple:#7c3aed;--purple-light:#ede9fe;
+      --gray-light:#f8fafc;--gray-mid:#e2e8f0;--gray-text:#64748b;--text:#1e293b;--white:#fff;
+      --pier:#0ea5e9;--porto:#e55c2f;--ciclic:#006eb7;--kakau:#f59e0b;--bemmais:#16a34a;--nubank:#820ad1;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--gray-light);color:var(--text);font-size:15px;line-height:1.6}
+    a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+
+    /* NAVBAR */
+    .navbar{background:var(--navy);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .navbar-brand{display:flex;align-items:center;gap:14px}
+    .navbar-icon{width:40px;height:40px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+    .navbar-title{color:var(--white);font-weight:700;font-size:17px}.navbar-title span{color:var(--blue-light)}
+    .navbar-sub{color:#94a3b8;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+    .nav-tag{background:rgba(16,163,74,.2);border:1px solid rgba(16,163,74,.4);color:#4ade80;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.8px}
+
+    /* WRAPPER */
+    .wrapper{max-width:1200px;margin:0 auto;padding:0 32px}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0c2a4a 100%);border-radius:20px;padding:52px 56px;margin:36px 32px}
+    .hero-badge{display:inline-block;background:rgba(16,163,74,.2);border:1px solid rgba(16,163,74,.4);color:#4ade80;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:22px}
+    .hero h1{color:var(--white);font-size:38px;font-weight:800;line-height:1.2;margin-bottom:18px}
+    .hero p{color:#cbd5e1;font-size:16px;line-height:1.7;max-width:720px;margin-bottom:32px}
+    .hero-meta{display:flex;gap:12px;flex-wrap:wrap}
+    .meta-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#e2e8f0;font-size:12px;padding:6px 14px;border-radius:20px;display:flex;align-items:center;gap:6px}
+    .meta-pill strong{color:var(--white)}
+
+    /* SECTION */
+    .section{padding:48px 0 16px}
+    .section-title{font-size:24px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .section-sub{color:var(--gray-text);font-size:14px;margin-bottom:28px}
+
+    /* STAT GRID */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px}
+    .stat-card{background:var(--white);border-radius:14px;border:1px solid var(--gray-mid);padding:24px;border-top:4px solid var(--blue)}
+    .stat-num{font-size:36px;font-weight:800;line-height:1}
+    .stat-label{font-size:13px;font-weight:700;color:var(--text);margin:6px 0 4px}
+    .stat-desc{font-size:12px;color:var(--gray-text);line-height:1.5}
+
+    /* CONTEXT CARDS */
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px}
+    .card{background:var(--white);border-radius:14px;padding:28px;border:1px solid var(--gray-mid)}
+    .card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+    .card-icon.blue{background:#eff6ff}.card-icon.green{background:#f0fdf4}.card-icon.red{background:#fef2f2}.card-icon.amber{background:#fffbeb}.card-icon.purple{background:#faf5ff}
+    .card h3{font-size:17px;font-weight:700;margin-bottom:10px}.card p{color:#475569;font-size:14px;line-height:1.65}
+
+    /* PLAYER GRID */
+    .player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:16px}
+    .player-card{background:var(--white);border-radius:14px;padding:24px 24px 24px 28px;border:1px solid var(--gray-mid);border-left:4px solid var(--blue);position:relative}
+    .player-eyebrow{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray-text);margin-bottom:4px}
+    .player-badge{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+    .badge-green{background:#dcfce7;color:#166534}.badge-blue{background:#dbeafe;color:#1e40af}.badge-red{background:#fee2e2;color:#991b1b}.badge-amber{background:#fef3c7;color:#92400e}.badge-purple{background:#ede9fe;color:#5b21b6}.badge-dark{background:#f1f5f9;color:#334155}
+    .player-card h3{font-size:19px;font-weight:700;margin-bottom:6px}
+    .player-card p{color:#475569;font-size:13.5px;line-height:1.6}
+    .player-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .player-chip{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px}
+    .chip-green{background:#dcfce7;color:#166534}.chip-red{background:#fee2e2;color:#991b1b}.chip-gray{background:#f1f5f9;color:#475569}.chip-blue{background:#dbeafe;color:#1e40af}.chip-amber{background:#fef3c7;color:#92400e}
+
+    /* MATRIX */
+    .matrix-wrap{background:var(--navy);border-radius:16px;padding:32px 36px 14px;overflow-x:auto}
+    .matrix-wrap h2{color:var(--white);font-size:22px;font-weight:700;margin-bottom:6px}
+    .matrix-wrap .sub{color:#94a3b8;font-size:13.5px;margin-bottom:28px}
+    .matrix-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;min-width:900px}
+    .matrix-table th{background:var(--white);padding:14px 10px 10px;text-align:center;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--text);border-bottom:2px solid var(--gray-mid)}
+    .matrix-table th:first-child{text-align:left;width:200px;color:var(--gray-text);font-size:10px}
+    .th-sub{display:block;font-size:10px;font-weight:400;color:var(--gray-text);text-transform:none;letter-spacing:0;margin-top:2px}
+    .matrix-table td{padding:14px 10px;border-bottom:1px solid var(--gray-mid);vertical-align:top}
+    .matrix-table tr:last-child td{border-bottom:none}
+    .matrix-table td:first-child{padding-left:18px}
+    .feature-name{font-weight:700;font-size:13px;color:var(--text);margin-bottom:3px}
+    .feature-desc{font-size:11px;color:var(--gray-text);line-height:1.45}
+    .cell-wrap{display:flex;flex-direction:column;align-items:center;gap:5px}
+    .pill{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+    .pill.sim{background:var(--green-light);color:var(--green);border:1px solid #bbf7d0}
+    .pill.nao{background:#f8fafc;color:#94a3b8;border:1px solid var(--gray-mid)}
+    .pill.parcial{background:var(--orange-light);color:var(--orange);border:1px solid #fde68a}
+    .cell-note{font-size:10.5px;color:var(--gray-text);text-align:center;line-height:1.4}
+    .cell-note.blue{color:var(--blue)}.cell-note.green{color:var(--green)}.cell-note.red{color:var(--red)}
+    .matrix-note{background:var(--white);border-radius:0 0 12px 12px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .matrix-note-text{font-size:13px;color:#475569}.matrix-note-text strong{color:var(--text)}
+    .legend{display:flex;gap:16px;align-items:center}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600}
+    .legend-dot{width:9px;height:9px;border-radius:50%}
+    .legend-dot.green{background:var(--green)}.legend-dot.orange{background:var(--orange)}.legend-dot.gray{background:#94a3b8}
+
+    /* PRICING */
+    .pricing-badge{display:inline-block;background:#f0fdf4;border:1px solid #bbf7d0;color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;margin-right:10px;vertical-align:middle}
+    .pricing-title{font-size:26px;font-weight:800;display:inline;vertical-align:middle}
+    .pricing-sub{color:var(--gray-text);font-size:14px;margin-top:6px;margin-bottom:36px}
+    .brand-pricing{background:var(--white);border-radius:14px;border:1px solid var(--gray-mid);padding:28px 28px 32px;margin-bottom:24px}
+    .brand-pricing.dark{background:var(--navy);border-color:#1e3a5f}
+    .bp-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+    .bp-dot{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:8px;flex-shrink:0;margin-top:5px}
+    .bp-brand-info{display:flex;align-items:flex-start}
+    .bp-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:3px}
+    .brand-pricing.dark .bp-name{color:var(--white)}
+    .bp-tagline{font-size:13px;color:var(--gray-text)}
+    .brand-pricing.dark .bp-tagline{color:#94a3b8}
+    .bp-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:none;white-space:nowrap;text-decoration:none}
+    .plans-grid{display:grid;gap:16px}
+    .plans-grid.cols-2{grid-template-columns:repeat(2,1fr)}.plans-grid.cols-3{grid-template-columns:repeat(3,1fr)}.plans-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    .plan-card{background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:12px;padding:22px;position:relative}
+    .plan-badge-top{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
+    .pb-green{background:var(--green);color:#fff}.pb-blue{background:var(--blue);color:#fff}.pb-amber{background:var(--orange);color:#fff}.pb-red{background:var(--red);color:#fff}.pb-purple{background:var(--purple);color:#fff}
+    .plan-tier-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .plan-tier{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-text);border:1px solid var(--gray-mid);padding:3px 8px;border-radius:5px;background:var(--white)}
+    .plan-devices{font-size:11px;color:var(--gray-text);font-weight:500}
+    .plan-name{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--text)}
+    .plan-price{font-size:28px;font-weight:800;color:var(--text);line-height:1;margin-bottom:2px}
+    .plan-price span{font-size:13px;font-weight:400;color:var(--gray-text)}
+    .plan-note{font-size:11px;color:var(--gray-text);margin-bottom:14px}
+    .plan-note.green{color:var(--green);font-weight:600}
+    .plan-divider{border:none;border-top:1px solid var(--gray-mid);margin:12px 0}
+    .plan-features{list-style:none}
+    .plan-features li{font-size:12.5px;color:#475569;margin-bottom:6px;display:flex;align-items:flex-start;gap:7px;line-height:1.4}
+    .plan-features li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0}
+    .plan-features li.no::before{content:"✕";color:#94a3b8}
+    .plan-features li strong{color:var(--text)}
+
+    /* TELECOM SECTION */
+    .telecom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+    .telecom-card{background:var(--white);border-radius:14px;border:1px solid var(--gray-mid);padding:24px}
+    .telecom-operator{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray-text);margin-bottom:10px}
+    .telecom-product{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px}
+    .telecom-highlight{font-size:12px;font-weight:600;padding:4px 0 8px;border-bottom:1px solid var(--gray-mid);margin-bottom:10px}
+    .telecom-highlight.red{color:var(--red)}.telecom-highlight.blue{color:var(--blue)}.telecom-highlight.green{color:var(--green)}
+    .telecom-desc{font-size:13px;color:#475569;line-height:1.55}
+    .telecom-price{font-size:20px;font-weight:800;color:var(--text);margin-top:12px}
+    .telecom-price span{font-size:12px;font-weight:400;color:var(--gray-text)}
+
+    /* ALERT */
+    .alert-box{border-radius:12px;padding:18px 24px;display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+    .alert-box.yellow{background:#fef3c7;border:1px solid #fde68a}
+    .alert-box.blue{background:#eff6ff;border:1px solid #bfdbfe}
+    .alert-box.green{background:#f0fdf4;border:1px solid #bbf7d0}
+    .alert-text{font-size:13.5px;line-height:1.65}
+    .alert-text.yellow{color:#92400e}.alert-text.blue{color:#1e40af}.alert-text.green{color:#166534}
+
+    /* TREND */
+    .trend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:16px}
+    .trend-card{background:var(--white);border-radius:14px;border:1px solid var(--gray-mid);padding:24px}
+    .trend-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+    .trend-label.up{color:var(--green)}.trend-label.down{color:var(--red)}.trend-label.neutral{color:var(--blue)}
+    .trend-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+    .trend-card p{font-size:13.5px;color:#475569;line-height:1.65}
+
+    /* SOURCES */
+    .sources-card{background:var(--navy);border-radius:16px;padding:36px 40px;margin-bottom:24px}
+    .sources-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
+    .sources-icon{width:44px;height:44px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .sources-title{color:var(--white);font-size:20px;font-weight:700;margin-bottom:4px}
+    .sources-sub{color:#94a3b8;font-size:13px}
+    .sources-text{color:#cbd5e1;font-size:14px;line-height:1.7;margin-bottom:20px}
+    .sources-list{list-style:none}
+    .sources-list li{font-size:13.5px;color:#cbd5e1;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:flex-start;gap:10px;line-height:1.7}
+    .sources-list li:last-child{border-bottom:none;padding-bottom:0}
+    .sources-list li::before{content:"•";color:#60a5fa;flex-shrink:0;margin-top:3px;font-size:16px}
+    .sources-list li strong{color:var(--white);min-width:200px;flex-shrink:0}
+    .sources-list a{color:#93c5fd;font-size:12px}
+
+    /* FOOTER */
+    .page-footer{display:flex;justify-content:space-between;align-items:center;padding:16px 0 32px;font-size:12px;color:var(--gray-text);flex-wrap:wrap;gap:8px}
+
+    @media(max-width:900px){
+      .stat-grid,.cards-3,.player-grid,.telecom-grid,.trend-grid,.plans-grid.cols-2,.plans-grid.cols-3,.plans-grid.cols-4{grid-template-columns:1fr}
+      .hero{margin:20px 16px;padding:36px 24px}.hero h1{font-size:26px}
+      .navbar{padding:0 16px}.wrapper{padding:0 16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="navbar-icon">📱</div>
+    <div>
+      <div class="navbar-title">INTELIGÊNCIA DE <span>MERCADO</span></div>
+      <div class="navbar-sub">Seguro de Celular B2C Brasil — Junho 2026</div>
+    </div>
+  </div>
+  <div class="nav-tag">NOVO PAINEL</div>
+</nav>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Análise de Mercado — Seguro de Celular</div>
+    <h1>Estudo Competitivo: Seguro de Celular B2C no Brasil</h1>
+    <p>Mapeamento completo do mercado de proteção de smartphones no Brasil — players, preços, coberturas, canais de distribuição via operadoras e tendências de um segmento em crescimento acelerado. Dados coletados e consolidados em Junho de 2026.</p>
+    <div class="hero-meta">
+      <div class="meta-pill">📅 Atualização: <strong>Junho de 2026</strong></div>
+      <div class="meta-pill">🌐 Escopo: <strong>Brasil</strong></div>
+      <div class="meta-pill">📱 Segmento: <strong>Seguro de Celular B2C</strong></div>
+      <div class="meta-pill">📄 Nível: <strong>Público / Consultivo</strong></div>
+    </div>
+  </div>
+
+  <!-- DADOS DE MERCADO -->
+  <div class="section">
+    <div class="section-title"><span>📊</span> Panorama do Mercado — Por Que o Seguro de Celular Cresce</div>
+    <div class="section-sub">Dados que justificam a expansão acelerada do segmento e o aumento da percepção de risco pelo consumidor brasileiro.</div>
+
+    <div class="stat-grid">
+      <div class="stat-card" style="border-top-color:#dc2626">
+        <div class="stat-num" style="color:#dc2626">917K</div>
+        <div class="stat-label">Celulares roubados/furtados em 2024</div>
+        <div class="stat-desc">2 aparelhos por minuto no Brasil. Apenas 1 em cada 12 recuperado. (Anuário FBSP 2025 — 19ª edição)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#d97706">
+        <div class="stat-num" style="color:#d97706">R$22,7B</div>
+        <div class="stat-label">Mercado paralelo de celulares (2023–2025)</div>
+        <div class="stat-desc">Valor movimentado pelo mercado ilegal de smartphones no Brasil em dois anos. (Fórum Brasileiro de Segurança Pública)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#2563eb">
+        <div class="stat-num" style="color:#2563eb">258M</div>
+        <div class="stat-label">Smartphones no Brasil em 2024</div>
+        <div class="stat-desc">1,2 aparelhos por habitante. O Brasil é um dos maiores mercados de smartphones do mundo. (FGV — mai/2024)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#16a34a">
+        <div class="stat-num" style="color:#16a34a">+30%</div>
+        <div class="stat-label">Crescimento em contratações de seguro celular</div>
+        <div class="stat-desc">Alta de 30% no primeiro semestre de 2024 vs. 2023. Porto Seguro reportou crescimento de 22% em receitas em seguros para celular em 2024 e mantém ritmo em 2025.</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#7c3aed">
+        <div class="stat-num" style="color:#7c3aed">67%</div>
+        <div class="stat-label">Segurados incluem cobertura de furto simples</div>
+        <div class="stat-desc">67% dos contratantes de seguro celular escolhem a cobertura de furto simples (sem vestígio). (Porto Seguro, jul/2025)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#0f172a">
+        <div class="stat-num" style="color:#0f172a">R$6K+</div>
+        <div class="stat-label">Valor médio de celulares premium no Brasil</div>
+        <div class="stat-desc">Modelos como iPhone 16 Pro e Samsung Galaxy S25 Ultra ultrapassam R$ 6.000, elevando a percepção de risco e a demanda por proteção.</div>
+      </div>
+    </div>
+
+    <!-- CONTEXT CARDS -->
+    <div class="cards-3">
+      <div class="card">
+        <div class="card-icon red">🚨</div>
+        <h3>Alta Sinistralidade Urbana</h3>
+        <p>São Paulo registrou 17 roubos de celular por hora em 2025 (154 mil ocorrências no ano). 79,6% dos crimes acontecem em vias públicas, com pico entre 19h e 20h. São Luís (MA) lidera o ranking nacional: 744 roubos por 100 mil habitantes. (SSP-SP / FBSP)</p>
+      </div>
+      <div class="card">
+        <div class="card-icon green">📈</div>
+        <h3>Mercado Subpenetrado</h3>
+        <p>Com 258 milhões de smartphones e quase 1 milhão de roubos/ano, a taxa de penetração do seguro de celular no Brasil ainda é muito baixa comparada ao potencial. O crescimento de 30% em contratações indica que o mercado está acordando para o produto. (Porto Seguro / FGV)</p>
+      </div>
+      <div class="card">
+        <div class="card-icon blue">🤖</div>
+        <h3>Embedded Insurance em Alta</h3>
+        <p>Em 2026, o seguro de celular consolida o modelo de "embedded insurance" — ofertado no momento da compra do aparelho em varejistas, operadoras e e-commerces. Insurtechs como Pier operam no formato de assinatura mensal digital, sem carência, franquia ou fidelidade. (Agger / Insurtech Brasil)</p>
+      </div>
+    </div>
+
+    <div class="alert-box yellow">
+      <span style="font-size:20px">⚠️</span>
+      <div class="alert-text yellow"><strong>Oportunidade de mercado:</strong> Com 258 milhões de smartphones, quase 1 milhão de roubos/ano e crescimento de 30% em contratações, o Brasil é um mercado de seguro celular em plena fase de desenvolvimento. O segmento premium (aparelhos acima de R$ 3.000) tem a maior propensão à contratação — e é exatamente onde as insurtechs estão concentrando esforços de penetração.</div>
+    </div>
+  </div>
+
+  <!-- PLAYERS -->
+  <div class="section">
+    <div class="section-title"><span>🏢</span> Players do Mercado de Seguro de Celular no Brasil</div>
+    <div class="section-sub">Empresas ativas no segmento B2C, classificadas por modelo de negócio e posicionamento competitivo em 2026.</div>
+
+    <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-mid)">🚀 INSURTECHS — MODELO DIGITAL NATIVO</div>
+    <div class="player-grid" style="margin-bottom:28px">
+      <div class="player-card" style="border-left-color:var(--pier)">
+        <div class="player-eyebrow">Insurtech</div>
+        <div class="player-badge badge-blue">Líder Digital</div>
+        <h3>Pier</h3>
+        <p>Fundada em 2018, é pioneira no Brasil em seguro celular digital. Ultrapassou R$ 250M em receitas em 2025 e projeta crescer 50% em 2026. Tem ~200 mil membros ativos. Única a cobrir furto simples desde o início. Usa tabela PIPE (equivalente à FIPE para celulares usados).</p>
+        <div class="player-chips">
+          <span class="player-chip chip-green">Sem franquia</span>
+          <span class="player-chip chip-green">Sem carência</span>
+          <span class="player-chip chip-blue">Furto simples</span>
+          <span class="player-chip chip-blue">Usados/exterior</span>
+          <span class="player-chip chip-gray">SUSEP licenciada</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:var(--kakau)">
+        <div class="player-eyebrow">Insurtech</div>
+        <div class="player-badge badge-amber">Digital</div>
+        <h3>Kakau Seguros</h3>
+        <p>No mercado desde 2017. Oferece cobertura para roubo, furto qualificado e quebra acidental. Tem franquia de 30%, mas zera a partir do 37º mês de assinatura — benefício para clientes de longa data. Processo 100% digital, sem carência.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-amber">Franquia 30% (zera no 37º mês)</span>
+          <span class="player-chip chip-green">Sem carência</span>
+          <span class="player-chip chip-gray">Quebra acidental inclusa</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:var(--nubank)">
+        <div class="player-eyebrow">Fintech → Seguro</div>
+        <div class="player-badge badge-purple">Fidelização</div>
+        <h3>Nubank Seguro</h3>
+        <p>Originalmente exclusivo para clientes Nubank, hoje aberto ao público. Cobre roubo, furto simples e danos acidentais. Carência de 30 dias ao contratar. Produto de fidelização integrado ao ecossistema financeiro do banco digital, com contratação via app.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-purple">30 dias carência</span>
+          <span class="player-chip chip-green">Furto simples</span>
+          <span class="player-chip chip-blue">App integrado</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-mid)">🏛️ SEGURADORAS TRADICIONAIS</div>
+    <div class="player-grid" style="margin-bottom:28px">
+      <div class="player-card" style="border-left-color:var(--porto)">
+        <div class="player-eyebrow">Seguradora Tradicional</div>
+        <div class="player-badge badge-red">Maior portfólio</div>
+        <h3>Porto Seguro</h3>
+        <p>Uma das maiores seguradoras do Brasil. Cresce 22% ao ano em seguros de celular. Oferece 4 planos com coberturas progressivas, incluindo transações Pix após roubo. App obrigatório reduz franquia de 25% para 20%. Sem carência, sem fidelidade.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-red">4 planos</span>
+          <span class="player-chip chip-green">Cobertura Pix pós-roubo</span>
+          <span class="player-chip chip-green">Cobertura internacional</span>
+          <span class="player-chip chip-gray">Franquia 20-25%</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:var(--ciclic)">
+        <div class="player-eyebrow">BB Seguros</div>
+        <div class="player-badge badge-blue">Banco do Brasil</div>
+        <h3>Ciclic (BB Seguros)</h3>
+        <p>Plataforma digital do BB Seguros + Principal Financial Group. Aceita aparelhos com até 24 meses de uso. Sem carência ao contratar pelo app. Sem fidelidade. Cobre roubo, furto qualificado, quebra e danos por líquidos. Cobertura internacional inclusa.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-blue">BB Seguros</span>
+          <span class="player-chip chip-green">Sem carência (via app)</span>
+          <span class="player-chip chip-gray">Até 24 meses de uso</span>
+          <span class="player-chip chip-green">Cobertura internacional</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:var(--bemmais)">
+        <div class="player-eyebrow">Especialista em Eletrônicos</div>
+        <div class="player-badge badge-green">Desde 2014</div>
+        <h3>BemMaisSeguro</h3>
+        <p>Especializada em seguros para eletrônicos desde 2014. Também protege notebooks, tablets e smartwatches. 2 planos: econômico (só roubo/furto) e completo (roubo + quebra + líquidos). Contratação em 3 minutos. Cobre novos e usados. Cobra franquia proporcional ao valor do aparelho.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-green">Novos e usados</span>
+          <span class="player-chip chip-gray">Cobra franquia</span>
+          <span class="player-chip chip-blue">Eletrônicos em geral</span>
+          <span class="player-chip chip-gray">Contratação em 3min</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-mid)">📡 OPERADORAS — SVA DE SEGURO CELULAR</div>
+    <div class="player-grid">
+      <div class="player-card" style="border-left-color:#dc2626">
+        <div class="player-eyebrow">Operadora Claro</div>
+        <div class="player-badge badge-red">Liberty Seguros</div>
+        <h3>Claro Proteção Móvel</h3>
+        <p>Em parceria com a Liberty Seguros. Disponível para clientes pós-pago, combo multi, banda larga e controle. Cobre roubo, furto qualificado e danos físicos (tela quebrada, quedas e líquidos). Cobrança via fatura mensal. Preço a partir de R$ 60/mês para smartphones premium.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-red">Liberty Seguros</span>
+          <span class="player-chip chip-green">Danos físicos inclusos</span>
+          <span class="player-chip chip-gray">Via fatura Claro</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:#7c3aed">
+        <div class="player-eyebrow">Operadora Vivo</div>
+        <div class="player-badge badge-purple">SVA Celular</div>
+        <h3>Vivo Seguro Celular</h3>
+        <p>Disponível para clientes Vivo com contratação digital. Planos variáveis por modelo de aparelho. Cobre roubo e furto qualificado, com opções de danos acidentais. Preços diferenciados por marca e modelo — diferença de até R$ 24 entre planos Apple e Samsung.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-purple">Contratação digital</span>
+          <span class="player-chip chip-gray">Preço por modelo</span>
+          <span class="player-chip chip-green">Roubo + furto qual.</span>
+        </div>
+      </div>
+      <div class="player-card" style="border-left-color:#2563eb">
+        <div class="player-eyebrow">Operadora TIM</div>
+        <div class="player-badge badge-blue">SVA TIM</div>
+        <h3>TIM Seguro Celular</h3>
+        <p>Seguro embarcado em planos TIM selecionados. Proteção contra roubo e furto com parceiros seguradoras. Disponível como serviço adicional (SVA) nos planos pós-pagos Black e controle. Cobrança integrada na fatura mensal da TIM.</p>
+        <div class="player-chips">
+          <span class="player-chip chip-blue">Planos Black e Controle</span>
+          <span class="player-chip chip-gray">Via fatura TIM</span>
+          <span class="player-chip chip-green">Embedded no plano</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATRIX -->
+  <div style="padding:8px 0 40px">
+    <div class="matrix-wrap">
+      <h2>Matriz de Coberturas &amp; Diferenciais por Player</h2>
+      <div class="sub">Comparação direta de coberturas, condições e diferenciais dos principais seguros de celular no Brasil — Junho/2026.</div>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Cobertura / Condição</th>
+            <th>PIER<span class="th-sub">Insurtech Líder</span></th>
+            <th>PORTO SEGURO<span class="th-sub">Tradicional</span></th>
+            <th>CICLIC<span class="th-sub">BB Seguros</span></th>
+            <th>KAKAU<span class="th-sub">Digital</span></th>
+            <th>BEMMAIS SEGURO<span class="th-sub">Eletrônicos</span></th>
+            <th>NUBANK<span class="th-sub">Fintech</span></th>
+            <th>CLARO<span class="th-sub">Operadora</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="feature-name">Roubo (com violência)</div><div class="feature-desc">Abordagem com violência ou ameaça e subtração do aparelho.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note green">Sem franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Franquia 20-25%</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Franquia variável</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Franquia 30%</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Franquia variável</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Furto Qualificado</div><div class="feature-desc">Subtração com vestígios (mochila rasgada, vidro quebrado, etc).</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note green">Sem franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Franquia 30%</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Furto Simples</div><div class="feature-desc">Subtração sem vestígios e sem violência. Ex: celular tirado da bolsa sem perceber.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note green">Pioneira no Brasil</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Plano específico</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cobertura básica</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Quebra Acidental / Tela</div><div class="feature-desc">Danos por quedas, acidentes físicos, tela quebrada.</div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Planos Quebra+Roubo</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cobertura completa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Plano completo</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Danos por Líquidos</div><div class="feature-desc">Oxidação, imersão e derramamento sobre o aparelho.</div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Plano Quebra+Roubo</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cobertura completa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Plano completo</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Transações Pix pós-roubo</div><div class="feature-desc">Cobertura de transações financeiras feitas indevidamente após o roubo/furto do aparelho.</div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note blue">Plano Pix — exclusivo</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não cobre</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Cobertura Internacional</div><div class="feature-desc">Proteção válida em viagens ao exterior.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cobertura global</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Incluso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Apenas Brasil</span></div></td>
+            <td><div class="cell-wrap"><span class="pill parcial">PARCIAL</span><span class="cell-note">Até 90 dias</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Não informado</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Apenas Brasil</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Celulares Usados / Sem NF</div><div class="feature-desc">Aceitação de aparelhos seminovos, sem nota fiscal ou comprados no exterior.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note green">Sem NF, usado, exterior</span></div></td>
+            <td><div class="cell-wrap"><span class="pill parcial">PARCIAL</span><span class="cell-note">NF exigida no sinistro</span></div></td>
+            <td><div class="cell-wrap"><span class="pill parcial">PARCIAL</span><span class="cell-note">Até 24 meses de uso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Até 1 ano de uso</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Novos e usados</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Carência 30 dias</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">NF exigida</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Sem Franquia</div><div class="feature-desc">O segurado recebe 100% do valor sem pagar taxa de acionamento.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note green">Zero franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">20-25% do valor</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Cobra franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill parcial">PARCIAL</span><span class="cell-note">30% → zera no 37º mês</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Cobra franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Cobra franquia</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">Cobra franquia</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Sem Carência</div><div class="feature-desc">Proteção ativa imediatamente após a contratação.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato via app</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato</span></div></td>
+            <td><div class="cell-wrap"><span class="pill nao">✕ Não</span><span class="cell-note">30 dias carência</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Imediato</span></div></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Sem Fidelidade</div><div class="feature-desc">Cancelamento a qualquer momento sem multa.</div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cancela quando quiser</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Sem multa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Sem multa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Sem multa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Sem multa</span></div></td>
+            <td><div class="cell-wrap"><span class="pill sim">✓ SIM</span><span class="cell-note">Cancela pelo app</span></div></td>
+            <td><div class="cell-wrap"><span class="pill parcial">PARCIAL</span><span class="cell-note">Via fatura operadora</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="matrix-note">
+        <div class="matrix-note-text">💡 <strong>Destaques:</strong> Pier é única sem franquia + sem carência + furto simples + usados sem NF. Porto Seguro tem exclusividade na cobertura de Pix pós-roubo. Kakau oferece redução progressiva de franquia até zerar.</div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot green"></div> INCLUSO</div>
+          <div class="legend-item"><div class="legend-dot orange"></div> PARCIAL / CONDICIONADO</div>
+          <div class="legend-item"><div class="legend-dot gray"></div> NÃO COBRE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div style="padding-top:48px">
+    <div style="margin-bottom:8px"><span class="pricing-badge">B2C</span><span class="pricing-title">Tabela de Preços — Junho 2026</span></div>
+    <div class="pricing-sub">Valores de referência por perfil de aparelho. Preços são variáveis por modelo, região e histórico de sinistros. Cotação personalizada recomendada para valores exatos.</div>
+
+    <!-- Pier -->
+    <div class="brand-pricing">
+      <div class="bp-header">
+        <div class="bp-brand-info"><span class="bp-dot" style="background:var(--pier)"></span><div><div class="bp-name">Pier — Seguro Celular</div><div class="bp-tagline" style="color:var(--pier)">Insurtech líder. R$ 250M+ em receitas em 2025. Pioneira em furto simples, sem franquia e sem carência. Crescimento projetado de 50% em 2026.</div></div></div>
+        <a href="https://pier.digital/seguro-celular" target="_blank" class="bp-btn" style="background:var(--pier);color:#fff">Cotar Pier ↗</a>
+      </div>
+      <div class="plans-grid cols-3">
+        <div class="plan-card">
+          <div class="plan-tier-row"><span class="plan-tier">ECONÔMICO</span><span class="plan-devices">Celulares até ~R$1.500</span></div>
+          <div class="plan-name">Pier Econômico</div>
+          <div class="plan-price">~R$ 20<span> /mês</span></div>
+          <div class="plan-note">Preço varia por aparelho. Cotação personalizada no site.</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Roubo e furto qualificado</li>
+            <li><strong>Furto simples incluso</strong></li>
+            <li>Sem franquia no acionamento</li>
+            <li>Cobertura no Brasil e exterior</li>
+            <li class="no">Não cobre quebra acidental</li>
+            <li class="no">Não cobre danos por líquidos</li>
+          </ul>
+        </div>
+        <div class="plan-card recommended" style="border-color:var(--pier)">
+          <div class="plan-badge-top pb-blue">Mais Contratado</div>
+          <div class="plan-tier-row"><span class="plan-tier">PREMIUM</span><span class="plan-devices">Celulares R$1.500–R$6.000</span></div>
+          <div class="plan-name">Pier Premium</div>
+          <div class="plan-price">~R$ 30–60<span> /mês</span></div>
+          <div class="plan-note">Varia por modelo. Ex: iPhone 14: ~R$50/mês</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Tudo do plano Econômico</li>
+            <li><strong>Cobertura 100% ou 75% (escolha)</strong></li>
+            <li>Indenização pela Tabela PIPE</li>
+            <li>Reembolso em 5 dias úteis</li>
+            <li>Aceita aparelhos usados e sem NF</li>
+            <li class="no">Não cobre quebra acidental</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-tier-row"><span class="plan-tier">TOPO</span><span class="plan-devices">iPhones e Flagships</span></div>
+          <div class="plan-name">Pier — iPhone/Galaxy Ultra</div>
+          <div class="plan-price">~R$ 60–90<span> /mês</span></div>
+          <div class="plan-note">iPhone 15 Pro Max: ~R$80/mês. Galaxy S25 Ultra: consultar.</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Toda cobertura do Premium</li>
+            <li>Tabela PIPE para seminovos</li>
+            <li>Assinatura mensal ou anual</li>
+            <li>Cancelamento sem multa</li>
+            <li class="no">Não cobre perda do aparelho</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Porto Seguro -->
+    <div class="brand-pricing">
+      <div class="bp-header">
+        <div class="bp-brand-info"><span class="bp-dot" style="background:var(--porto)"></span><div><div class="bp-name">Porto Seguro — Seguro Celular</div><div class="bp-tagline" style="color:var(--porto)">Maior portfólio do mercado. 4 planos com coberturas progressivas. Único com cobertura de Pix após roubo. Crescimento de 22% em receitas em 2024.</div></div></div>
+        <a href="https://www.portoseguro.com.br/celular" target="_blank" class="bp-btn" style="background:var(--porto);color:#fff">Cotar Porto Seguro ↗</a>
+      </div>
+      <div class="plans-grid cols-4">
+        <div class="plan-card">
+          <div class="plan-tier-row"><span class="plan-tier">BÁSICO</span></div>
+          <div class="plan-name">Roubo</div>
+          <div class="plan-price" style="font-size:18px">Cotação</div>
+          <div class="plan-note">Valor varia por aparelho e cidade.</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Roubo com ou sem violência</li>
+            <li>Furto com vestígios</li>
+            <li>Cobertura internacional</li>
+            <li class="no">Sem quebra acidental</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-tier-row"><span class="plan-tier">INTERMEDIÁRIO</span></div>
+          <div class="plan-name">Quebra + Roubo</div>
+          <div class="plan-price" style="font-size:18px">Cotação</div>
+          <div class="plan-note">iPhone 13 128GB: ~R$60-90/mês (referência)</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Tudo do plano Roubo</li>
+            <li>Quebra acidental</li>
+            <li>Oxidação por líquidos</li>
+            <li>Curto-circuito</li>
+          </ul>
+        </div>
+        <div class="plan-card popular-norton" style="border-color:var(--porto)">
+          <div class="plan-badge-top pb-red">Mais Popular</div>
+          <div class="plan-tier-row"><span class="plan-tier">COMPLETO</span></div>
+          <div class="plan-name">Quebra + Roubo + Furto Simples</div>
+          <div class="plan-price" style="font-size:18px">Cotação</div>
+          <div class="plan-note">Desconto de 5-10% para clientes Porto</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Tudo do intermediário</li>
+            <li><strong>Furto simples incluso</strong></li>
+            <li>67% dos segurados escolhem esse</li>
+            <li>Franquia reduz com app ativo</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-badge-top pb-red">Exclusivo BR</div>
+          <div class="plan-tier-row"><span class="plan-tier">MÁXIMO</span></div>
+          <div class="plan-name">+ Transações Digitais/Pix</div>
+          <div class="plan-price" style="font-size:18px">Cotação</div>
+          <div class="plan-note">Único player com essa cobertura no Brasil</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Tudo do plano Completo</li>
+            <li><strong>Pix feitos após roubo/furto</strong></li>
+            <li>Transferências indevidas cobertas</li>
+            <li>Cobertura financeira digital</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Referência de preços por aparelho -->
+    <div class="brand-pricing" style="background:#f8fafc">
+      <div class="bp-header">
+        <div><div class="bp-name">📋 Referência de Preços por Aparelho e Cidade — Junho/2026</div><div class="bp-tagline">Valores aproximados coletados de simulações nos portais das seguradoras. Preços variam por índice de criminalidade da região.</div></div>
+      </div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead>
+            <tr style="background:var(--navy);color:#fff">
+              <th style="padding:10px 14px;text-align:left;border-radius:8px 0 0 0">Aparelho</th>
+              <th style="padding:10px 14px;text-align:center">Valor aprox.</th>
+              <th style="padding:10px 14px;text-align:center">Pier (roubo/furto)</th>
+              <th style="padding:10px 14px;text-align:center">Porto SP</th>
+              <th style="padding:10px 14px;text-align:center">Porto RJ</th>
+              <th style="padding:10px 14px;text-align:center">Ciclic</th>
+              <th style="padding:10px 14px;text-align:center;border-radius:0 8px 0 0">Claro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--gray-mid)">
+              <td style="padding:10px 14px;font-weight:600">Moto G (entrada)</td>
+              <td style="padding:10px 14px;text-align:center;color:var(--gray-text)">~R$ 800</td>
+              <td style="padding:10px 14px;text-align:center"><strong>~R$ 15–20/mês</strong></td>
+              <td style="padding:10px 14px;text-align:center">~R$ 20–30/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 30–40/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 18–25/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 25/mês</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--gray-mid);background:#f8fafc">
+              <td style="padding:10px 14px;font-weight:600">Samsung Galaxy A55</td>
+              <td style="padding:10px 14px;text-align:center;color:var(--gray-text)">~R$ 2.200</td>
+              <td style="padding:10px 14px;text-align:center"><strong>~R$ 30–45/mês</strong></td>
+              <td style="padding:10px 14px;text-align:center">~R$ 40–60/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 55–75/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 35–50/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 60/mês</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--gray-mid)">
+              <td style="padding:10px 14px;font-weight:600">iPhone 14 128GB</td>
+              <td style="padding:10px 14px;text-align:center;color:var(--gray-text)">~R$ 5.000</td>
+              <td style="padding:10px 14px;text-align:center"><strong>~R$ 50–60/mês</strong></td>
+              <td style="padding:10px 14px;text-align:center">~R$ 60–90/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 90–120/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 55–80/mês</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 60/mês+</td>
+            </tr>
+            <tr style="background:#f8fafc">
+              <td style="padding:10px 14px;font-weight:600">iPhone 15 Pro Max 1TB</td>
+              <td style="padding:10px 14px;text-align:center;color:var(--gray-text)">~R$ 12.000</td>
+              <td style="padding:10px 14px;text-align:center"><strong>~R$ 80–100/mês</strong></td>
+              <td style="padding:10px 14px;text-align:center">~R$ 133–139/mês (SP)</td>
+              <td style="padding:10px 14px;text-align:center">~R$ 195/mês (RJ)</td>
+              <td style="padding:10px 14px;text-align:center">Cotação site</td>
+              <td style="padding:10px 14px;text-align:center">Cotação site</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:11px;color:var(--gray-text);margin-top:12px">⚠️ Valores de referência. Preços variam por índice de roubo da cidade, perfil do segurado e cobertura escolhida. Cotação personalizada recomendada nos sites das seguradoras.</div>
+    </div>
+  </div>
+
+  <!-- OPERADORAS SVA -->
+  <div style="padding-top:48px;padding-bottom:16px">
+    <div class="section-title"><span>📡</span> Canal das Operadoras — SVA de Seguro Celular</div>
+    <div class="section-sub">Como Claro, Vivo e TIM oferecem seguro de celular como Serviço de Valor Adicionado (SVA) integrado à fatura mensal.</div>
+
+    <div class="telecom-grid">
+      <div class="telecom-card">
+        <div class="telecom-operator">Operadora Claro</div>
+        <div class="telecom-product">Claro Proteção Móvel</div>
+        <div class="telecom-highlight red">Parceria: Liberty Seguros S/A</div>
+        <div class="telecom-desc">Disponível para clientes pós-pago, combo multi, banda larga e controle com pagamento na fatura. Cobre roubo, furto qualificado e <strong>danos físicos</strong> (tela quebrada, quedas e líquidos). Disponível para aparelhos comprados na Claro ou trazidos pelo cliente.</div>
+        <div class="telecom-price">A partir de R$ 60<span>/mês</span></div>
+        <div style="font-size:11px;color:var(--gray-text);margin-top:4px">iPhone 14 e Samsung S23: mesmo preço base (R$ 60+)</div>
+      </div>
+      <div class="telecom-card">
+        <div class="telecom-operator">Operadora Vivo</div>
+        <div class="telecom-product">Vivo Seguro Celular</div>
+        <div class="telecom-highlight" style="color:#7c3aed">Preço varia por modelo e marca</div>
+        <div class="telecom-desc">Contratação digital para clientes Vivo. Cobre roubo e furto qualificado, com opção de danos acidentais. Diferença de até R$ 24/mês entre planos para Apple e Samsung. Cobrança integrada à fatura Vivo. Planos básicos a partir de R$ 11,99/mês.</div>
+        <div class="telecom-price">A partir de R$ 11,99<span>/mês</span></div>
+        <div style="font-size:11px;color:var(--gray-text);margin-top:4px">Preço mais acessível do canal operadora</div>
+      </div>
+      <div class="telecom-card">
+        <div class="telecom-operator">Operadora TIM</div>
+        <div class="telecom-product">TIM Seguro Celular</div>
+        <div class="telecom-highlight blue">SVA incluso em planos selecionados</div>
+        <div class="telecom-desc">Seguro embarcado como SVA nos planos TIM pós-pagos Black e Controle selecionados. Proteção contra roubo e furto com parceiros seguradores. Cobrança integrada na fatura TIM mensal. Facilidade de ativação sem contratar seguradora separada.</div>
+        <div class="telecom-price">Incluso ou SVA adicional</div>
+        <div style="font-size:11px;color:var(--gray-text);margin-top:4px">Disponível via fatura TIM</div>
+      </div>
+    </div>
+
+    <div class="alert-box blue">
+      <span style="font-size:20px">💡</span>
+      <div class="alert-text blue"><strong>Oportunidade nos canais de operadoras:</strong> O modelo SVA via operadora é conveniente (cobrança na fatura, sem novo app), mas geralmente oferece coberturas mais limitadas e preços mais altos que as insurtechs. A Porto Seguro Proteção Móvel pela Claro a R$ 60/mês para um iPhone 14 compete com a Pier (~R$ 50/mês) — mas a Pier não cobre quebra acidental, enquanto a Claro cobre. O perfil do usuário e o tipo de risco define qual canal faz sentido.</div>
+    </div>
+  </div>
+
+  <!-- TENDÊNCIAS -->
+  <div style="padding-top:8px;padding-bottom:40px">
+    <div class="section-title"><span>🚀</span> Tendências e Movimentos do Mercado — 2026</div>
+    <div class="section-sub">O que está mudando no segmento de seguro de celular no Brasil e o que esperar nos próximos meses.</div>
+
+    <div class="trend-grid">
+      <div class="trend-card">
+        <div class="trend-label up">📈 CRESCIMENTO</div>
+        <h4>Embedded Insurance explode no varejo</h4>
+        <p>Em 2026, o seguro de celular consolida o modelo embedded — ofertado no ato da compra do aparelho em redes varejistas (Magalu, Casas Bahia, operadoras). Jornada simplificada, cobertura imediata e planos mensais tornam o produto atrativo para público jovem e conectado. Seguradoras já operam em checkouts de e-commerces como Amazon e Shopee.</p>
+      </div>
+      <div class="trend-card">
+        <div class="trend-label up">📈 CRESCIMENTO</div>
+        <h4>IA na precificação e combate à fraude</h4>
+        <p>Insurtechs como Pier usam big data e machine learning para precificação dinâmica por perfil de risco individual (localização, histórico de sinistros, uso do app). Agentes de IA monitoram carteiras em tempo real, reduzindo sinistralidade e custo operacional. A Pier já opera com a melhor margem técnica do mercado.</p>
+      </div>
+      <div class="trend-card">
+        <div class="trend-label up">📈 CRESCIMENTO</div>
+        <h4>Cobertura de Pix pós-roubo vira diferencial</h4>
+        <p>Com 24 milhões de vítimas de golpes Pix em 2025, a cobertura de transações digitais feitas após o roubo tornou-se um diferencial de alto valor percebido. Porto Seguro é a única seguradora de celular com esse plano no Brasil. Tendência: demais players devem adicionar essa cobertura até 2027.</p>
+      </div>
+      <div class="trend-card">
+        <div class="trend-label up">📈 CRESCIMENTO</div>
+        <h4>Aparelhos usados impulsionam novo segmento</h4>
+        <p>O mercado de smartphones usados cresceu fortemente com plataformas como OLX, Mercado Livre e Enjoei. Pier é a única seguradora que cobre celulares usados sem nota fiscal e comprados no exterior — uma vantagem competitiva relevante num mercado onde boa parte dos aparelhos circula de mão em mão.</p>
+      </div>
+      <div class="trend-card">
+        <div class="trend-label neutral">🔄 MOVIMENTO</div>
+        <h4>Seguradoras tradicionais pressionam insurtechs</h4>
+        <p>Porto Seguro cresceu 22% em receitas em seguros celular em 2024 e mantém ritmo em 2025. A digitalização das grandes seguradoras reduziu a vantagem de experiência das insurtechs. A diferença agora está em: ausência de franquia (Pier), amplitude de cobertura (Porto) e ecossistema financeiro integrado (Nubank).</p>
+      </div>
+      <div class="trend-card">
+        <div class="trend-label neutral">🔄 MOVIMENTO</div>
+        <h4>Operadoras buscam novos produtos SVA</h4>
+        <p>TIM, Vivo e Claro buscam aumentar receitas de SVA além de cibersegurança. O seguro de celular via fatura é um produto natural para essa estratégia — facilidade de cobrança, redução de churn e aumento do ARPU. O desafio: competir em preço e cobertura com as insurtechs digitais.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources-card">
+    <div class="sources-header">
+      <div class="sources-icon">📖</div>
+      <div><div class="sources-title">Fontes Oficiais e Dados de Mercado — Junho 2026</div><div class="sources-sub">Fontes consultadas para construção deste painel de inteligência de mercado</div></div>
+    </div>
+    <div class="sources-text">Dados coletados de portais oficiais das seguradoras, relatórios de segurança pública, pesquisas de mercado e fontes jornalísticas especializadas até Junho de 2026:</div>
+    <ul class="sources-list">
+      <li><strong>Fórum Brasileiro de Segurança Pública — Anuário 2025 (19ª ed.):</strong> 917.748 celulares roubados/furtados em 2024. R$ 22,7 bilhões movimentados pelo mercado paralelo (2023-2025). Taxa de recuperação: 1 em cada 12 aparelhos.</li>
+      <li><strong>FGV — Pesquisa TIC Brasil (mai/2024):</strong> 258 milhões de smartphones em uso no Brasil, 1,2 aparelhos por habitante. Maior base de smartphones da América Latina.</li>
+      <li><strong>Porto Seguro (via Valor Econômico, jul/2025):</strong> Crescimento de 22% em receitas de seguros celular em 2024. 67% dos segurados incluem cobertura de furto simples. Plano com cobertura de Pix pós-roubo único no mercado.</li>
+      <li><strong>Pier Seguradora (via Insurtech Brasil, mai/2026):</strong> Superou R$ 250M em receitas em 2025. ~200 mil membros. Projeta crescimento de 50% em 2026 com uso de IA proprietária e agentes de monitoramento de carteira.</li>
+      <li><strong>Secretaria de Segurança Pública SP (jan/2026):</strong> 154.058 roubos e furtos de celulares na capital paulista em 2025. Média de 17 ocorrências por hora. Taxa de recuperação: apenas 6,8%.</li>
+      <li><strong>Agger / CNSeg (dez/2025):</strong> Mercado de seguros cresce 8% em 2026. Seguro celular consolida-se como tendência com embedded insurance e IA generativa na jornada de contratação.</li>
+      <li><strong>Portais oficiais das seguradoras consultados (jun/2026):</strong> <a href="https://pier.digital/seguro-celular" target="_blank">Pier</a>, <a href="https://www.portoseguro.com.br/celular" target="_blank">Porto Seguro</a>, <a href="https://www.ciclic.com.br/seguro-equipamentos-portateis" target="_blank">Ciclic</a>, <a href="https://www.bemmaisprotegido.com.br" target="_blank">BemMaisSeguro</a>, <a href="https://melhorplano.net/tecnologia/seguro-para-celular" target="_blank">Melhor Plano (comparador)</a>.</li>
+    </ul>
+  </div>
+
+  <div class="page-footer">
+    <span>*Dados consolidados com base em fontes públicas disponíveis até Junho/2026. Preços sujeitos a variações — cotação personalizada recomendada.</span>
+    <span>Inteligência de Mercado &nbsp;|&nbsp; © 2026 EXA</span>
+  </div>
+
+</div>
+</body>
+</html>
